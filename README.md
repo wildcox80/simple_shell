@@ -8,6 +8,7 @@ Write a simple shell command line interpreter Unix in C
 
 ## Usage
 
+
 ### Interactive mode
 `$ ./hsh
 hsh$ /bin/ls
