@@ -9,8 +9,8 @@ hsh \- Simple command-line interpreter UNIX.
 
 .SH DESCRIPTION
 .B hsh
-A Unix shell is a command-line interpreter or shell that provides a command line user interface for Unix-like operating systems. 
-This shell was inspired by the first UNIX shell created by Ken Thompson. 
+A Unix shell is a command-line interpreter or shell that provides a command line user interface for Unix-like operating systems.
+This shell was inspired by the first UNIX shell created by Ken Thompson.
 hsh was developed in Ubuntu 16.04 LTS, compiled with GCC 4.8.4.
 
 .SH Invocation:
@@ -18,13 +18,13 @@ Invocate the shell in interactive mode by executing the command:
 .br
 .\&
 .RS
-\&$ ./hsh. 
+\&$ ./hsh.
 
 A prompt
 will appear and the user may begin entering commands and executing them by
-pressing "Enter". 
+pressing "Enter".
 
-Alternatively, a command can be entered and then piped into ./hsh. For example: 
+Alternatively, a command can be entered and then piped into ./hsh. For example:
 .br
 .\&
 \&$ echo "hello world" | ./hsh

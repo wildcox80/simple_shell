@@ -58,7 +58,7 @@ Program that runs simple shell included contain helper functions and built-ins
 ### AUTHORS
 Contributors and authors for this project
 * **Wilder Rincon** - *Initial work* - [wildcox80](https://github.com/wildcox80)
-* **Jhonatan Angarita** - *Initial work* 
+* **Jhonatan Angarita** - *Initial work*
 
 ### LICENSE
 This project is licensed under the GPL License - see the [GPL 2.0](https://opensource.org/licenses/GPL-2.0) file for details
