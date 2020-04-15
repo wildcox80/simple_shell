@@ -20,7 +20,7 @@
 extern char **environ;
 
 /* Prototypes */
-int _putchar(int c);
+int _putchar(char c);
 int _atoi(char *s);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
