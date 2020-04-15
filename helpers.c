@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * pr_prompt - prints the prompt
+ * printprompt - prints the prompt
  * @prompt: prompt style
  */
 void printprompt(char *prompt)
