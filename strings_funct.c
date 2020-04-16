@@ -45,63 +45,88 @@ int _strlen(char *s)
 }
 
 /**
- *_strcpy - function to copy string from source
- *@dest: pointer to destination of string
- *@src: pointer to source of string
- * Return: return the value at dest
+ * *_strstr - find a string in another string
+ * @haystack: pointer to array to be searched
+ * @needle: pointer to array to search for
+ * Return: return pointer to location of string
  */
 
-char *_strcpy(char *dest, char *src)
+char *_strstr(char *haystack, char *needle)
 {
-	int a;
+	const char *s, *t;
 
-	for (a = 0; src[a] != '\0'; a++)
-	{
-		dest[a] = src[a];
-	}
-	dest[a] = '\0';
-	return (dest);
-}
-
-
-/**
- *_strcat - concatenate two string
- *@dest: destination concatenate
- *@src: source concatenate
- *Return: concatenate two string
- */
-
-char *_strcat(char *dest, char *src)
-{
-	int dest_len;
-	int i;
-
-	dest_len = _strlen(dest);
-	for (i = 0; src[i] != '\0'; i++)
-		dest[dest_len + i] = src[i];
-	dest[dest_len + i] = '\0';
-	return (dest);
-}
-
-/**
- * _strfind - find a character in a string
- * @c: character to find
- * @s: string to seach
- *
- * Return: 1 if found, 0 otherwise
- */
-int _strfind(char c, char *s)
-{
-	if (s == NULL)
+	if (!haystack || !needle)
 		return (0);
 
-	if (*s == c)
+	if (!*needle)
+		return ((char *)haystack);
+	for (; *haystack; haystack++)
 	{
-		for (s = 0; *s != '\0'; s++)
+		if (*haystack == *needle)
 		{
-			return (1);
+			t = haystack;
+			s = needle;
+			for (; *t; s++, t++)
+			{
+				if (*t != *s)
+					break;
+			}
+			if (!*s)
+				return ((char *)haystack);
 		}
 	}
 	return (0);
+}
+
+/**
+ *_strdup - back a pointer to array
+ *@str: pointer to array
+ *Return: Always an array dinamic
+ */
+
+char *_strdup(char *str)
+{
+	char *arr;
+	unsigned int i, size;
+
+	if (str == 0)
+		return (NULL);
+
+	size = _strlen(str) + 1;
+
+	arr = (char *)malloc(size * sizeof(char));
+
+	if (arr == 0)
+		return (NULL);
+
+	for (i = 0; *(str + i) != '\0'; i++)
+		*(arr + i) = *(str + i);
+
+	*(arr + i) = '\0';
+
+	return (arr);
+}
+
+/**
+ *_equal - find sames characters
+ *@dest: initial segment
+ *@src: prefix
+ *Return: Always int
+ */
+int _equal(char *dest, char *src)
+{
+	int i;
+
+	i = 0;
+
+	while (*dest + i != '\0' && *src + i != '\0')
+	{
+		if (*dest != *src)
+			return (0);
+		dest++;
+		src++;
+	}
+
+	return (*src == '\0');
 }
 
