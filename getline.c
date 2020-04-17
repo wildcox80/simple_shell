@@ -2,7 +2,7 @@
 
 /**
  * get_line - Prints "jw_shell/user@root$"  and wait for a command
- * @isatty_val: no_interactive
+ * @isatty: no_interactive
  * Return: The read command (line)
  **/
 
