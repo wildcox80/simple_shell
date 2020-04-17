@@ -43,34 +43,39 @@ return (a);
 }}
 
 /**
- *_strdup - back a pointer to array
- *@str: pointer to array
- *Return: Always an array dinamic
+ * _strdup - returns a pointer to a newly allocated space in memory
+ * @str: pointer string
+ * Return: Return pointer to array created
  */
 
 char *_strdup(char *str)
 {
-	char *arr;
-	unsigned int i, size;
+	char *s;
+	int i;
+	int counter = 1;
 
-	if (str == 0)
+	if (str == NULL)
+	{
 		return (NULL);
+	}
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		counter++;
+	}
 
-	size = _strlen(str) + 1;
-
-	arr = (char *)malloc(size * sizeof(char));
-
-	if (arr == 0)
+	s = malloc(counter);
+	if (s == NULL)
+	{
 		return (NULL);
-
-	for (i = 0; *(str + i) != '\0'; i++)
-		*(arr + i) = *(str + i);
-
-	*(arr + i) = '\0';
-
-	return (arr);
+	}
+	i = 0;
+	while (i < counter)
+	{
+		s[i] = str[i];
+		i++;
+	}
+	return (s);
 }
-
 /**
  *_equal - find sames characters
  *@dest: initial segment
