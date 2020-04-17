@@ -73,6 +73,12 @@ Program that runs simple shell included contain helper functions and built-ins
 
 ### execve.c
 
+### getpath.c
+
+### _putchar.c
+
+### str_functions.c
+
 ### AUTHORS
 Contributors and authors for this project
 * **Wilder Rincon** - *Initial work* - [wildcox80](https://github.com/wildcox80)
