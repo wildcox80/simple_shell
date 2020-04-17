@@ -18,22 +18,21 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- * _strlen - Return the lenght of a string
- * @s: The string to test
- *
- * Return: Integer: The lenght of a string
+ * _strlen  -returns the length of a string.
+ * @s: pointer s.
+ * Return: Always 0.
  */
+
 int _strlen(char *s)
 {
-	int contador = 0, indice = 0;
-
-	while (s[indice] != '\0')
-	{
-		contador++;
-		indice++;
-	}
-	return (contador);
+int a;
+a = 0;
+while (s[a] != '\0')
+{
+a++;
 }
+return (a);
+}}
 
 /**
  *_strdup - back a pointer to array
