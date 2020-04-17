@@ -2,7 +2,7 @@
 
 /**
  * _strtok - Split to token of strok
- * @line_messages: recieved to user
+ * @line_msg: recieved to user
  * Return: the chit(s)
  */
 char **_strtok(char *line_msg)

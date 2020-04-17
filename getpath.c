@@ -52,7 +52,7 @@ int chr_del(char *str, char *delim)
 	if (str != NULL && delim != NULL)
 	{
 		i = 0;
-		while(delim[i] != '\0')
+		while (delim[i] != '\0')
 			i++;
 		j = 0;
 		while (str[j] != '\0')

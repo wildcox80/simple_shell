@@ -3,7 +3,7 @@
  * main - simple shell program that takes user input and interprets it as unix
  * commands
  * @argc: number of command line arguments
- * @argv: list of command line arguments
+ * @av: list of command line arguments
  * @env: environment
  * Return: 0 (success)
  */

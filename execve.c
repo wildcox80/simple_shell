@@ -3,7 +3,7 @@
  * _execev - Execute a programming exec
  * @line:  recieved from strtok the token
  * @argv: line of arguments of file
- * @num:  variablei internal
+ * @num:  var internal
  * @isatty: is the tty
  * @envi: enviroment variable
  * Return: None
@@ -15,7 +15,6 @@ void _execev(char **line, char *argv, int num, int isatty, char **envi)
 
 	if (line[0] == NULL)
 		return;
-
 	if (built_int(line, envi) == 1)
 		return;
 
@@ -34,10 +33,8 @@ void _execev(char **line, char *argv, int num, int isatty, char **envi)
 	else
 	{
 		if (checking_path(envi, line) == 0)
-		{
-			printf("%s", line[0]);
 			_exec = execve(line[0], line, envi);
-		}
+
 		if (_exec < 0)
 		{
 			if (isatty == 1)
@@ -54,3 +51,4 @@ void _execev(char **line, char *argv, int num, int isatty, char **envi)
 		exit(EXIT_SUCCESS);
 	}
 }
+
