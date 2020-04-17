@@ -4,51 +4,37 @@
  * commands
  * @argc: number of command line arguments
  * @argv: list of command line arguments
- *
+ * @env: environment
  * Return: 0 (success)
  */
 
 
-int main(__attribute__((unused))int argc, char *argv[])
+int main(int argc __attribute__((unused)), char **av, char **env)
 {
-	pid_t child;
-	char *line, **tokens;
-	int status, loop_count = 0;
+	char *string = NULL, **line = NULL;
+	int _num_prompt = 0, val_isatty = 0;
 
-	signal(SIGINT, SIG_IGN);
-	child = getpid();
-	while (child > 0)
+	while (1)
 	{
-		if (isatty(0))
-			printprompt("simple_shell$ ");
-		line = get_line();
-		if (line == NULL)
+		val_isatty = isatty(STDIN_FILENO);
+		string = get_line(val_isatty);
+
+		if (_strcmp(string, "exit\n") == 0)
 		{
-			errno = EINVAL, perror(argv[0]);
-			return (-1);
+			free(string);
+			exit(0);
 		}
-		else if (line[0] == EOF)
+
+		if (string != NULL)
 		{
+			_num_prompt++;
+			line = _strtok(string);
+			_execev(line, av[0], _num_prompt, val_isatty, env);
+			free(string);
 			free(line);
-			if (isatty(0))
-				write(1, "\n", 1);
-			return (0);
 		}
-		else if (line[0] != '\0' && _strcmp(line, ".") && _strcmp(line, ".."))
-		{
-			tokens = split_lines(line, DELIM);
-			if (_strcmp(tokens[0], "exit") == 0)
-			{
-				status = tokens[1] == NULL ? 0 : _atoi(tokens[1]);
-				free(line), free(tokens);
-				return (status);
-			}
-			child = jw_sh(argv[0], line, tokens, loop_count);
-			free(tokens);
-		}
-		free(line);
-		loop_count++;
+		val_isatty = 0;
 	}
-	return (child == -1 ? -1 : 0);
+	return (0);
 }
 

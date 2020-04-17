@@ -1,45 +1,51 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
-/* the above is written to avoid double inclusion */
 
 /* the libraries standard */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <errno.h>
+#include <fcntl.h>
 #include <unistd.h>
+#include <dirent.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
+#include <signal.h>
 
 /* Macros defined */
 #define BUF_SIZE 64
 #define ARG_SIZE 10
 #define DELIM " \t\r\n\a"
 #define MAX 1024
+#define STDOUT STDOUT_FILENO
+#define DELIM_PATH "=:"
+
 extern char **environ;
 
 /* Prototypes */
+char **free_ptr(char **line);
 int _putchar(char c);
-int _atoi(char *s);
+void _exit_function(void);
+void prompt_shell(void);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
-char *_strcat(char *dest, char *src);
-int _strfind(char c, char *s);
-char *num_to_string(int num);
-char **split_lines(char *line, char *delim);
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-char *get_line(void);
-void printprompt(char *prompt);
-void print_error(char *prog, int loop_count, char *line);
-int builtins(char *line);
-int execute(char **tokens, struct stat *st);
-pid_t jw_sh(char *prog, char *line, char **tokens, int loop_count);
-void printenv(void);
-char *getpath(char *name);
+char *_strstr(char *haystack, char *needle);
+char *_strdup(char *str);
+char **_strtok(char *line_msg);
+char *str_concat(char *s1, char *s2);
+int _equal(char *dest, char *src);
+char **get_path(char **env);
+char *get_line(int isatty);
+void _execev(char **line, char *argv, int num, int isatty, char **envi);
+int built_int(char **line, char **environ);
+char *_strstr(char *haystack, char *needle);
+int _equal(char *dest, char *src);
+char *str_concat(char *s1, char *s2);
+int chr_del(char *str, char *delimits);
+int checking_path(char **env, char **argvs);
 char *_getenv(const char *name);
-int get_char(void);
+void printenv(void);
 
 #endif /* SHELL */
 
