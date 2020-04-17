@@ -40,7 +40,7 @@ while (s[a] != '\0')
 a++;
 }
 return (a);
-}}
+}
 
 /**
  * _strdup - returns a pointer to a newly allocated space in memory
