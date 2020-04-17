@@ -1,22 +1,30 @@
 #include "shell.h"
 
 /**
- * _strcmp - Compares two strings
- * @s1: The string to 1t
- * @s2: The string to 1t
- * Return: An interer to array
+ *_strcmp -  compares two strings
+ *@s1: A pointer to an char that will be updated
+ *@s2: A pointer to an char that will be updated
+ *Return: dest
  */
+
 int _strcmp(char *s1, char *s2)
 {
-	int i = 0;
+/* pointer declaration*/
+	char *p1 = s1;
+	char *p2 = s2;
 
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
-	{
-		i++;
-	}
-	return (s1[i] - s2[i]);
+/* Loop While*/
+while (*p1 != '\0' && *p2 != '\0' && *p1 == *p2)
+{
+
+/* Pointer iteration*/
+p1++;
+p2++;
+
 }
 
+return (*p1 - *p2);
+}
 /**
  * _strlen  -returns the length of a string.
  * @s: pointer s.
