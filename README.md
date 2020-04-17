@@ -52,8 +52,26 @@ man page for simple shell project
 ### shell.h
 Header file for simple shell program
 
-### shell.c
+### jw_shell.c
 Program that runs simple shell included contain helper functions and built-ins
+
+### _exit.c
+
+### strtok.c
+
+### built_int.c
+
+### free_ptr.c
+
+### env.c
+
+### getline.c
+
+### pr_prompt.c
+
+### strcncat.c
+
+### execve.c
 
 ### AUTHORS
 Contributors and authors for this project
