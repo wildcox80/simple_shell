@@ -51,13 +51,15 @@ man page for simple shell project
 
 ### shell.h
 
-/#include <stdio.h>
+These are the libraries used in the project
 
-"#"include <stdlib.h>
+#include <stdio.h>
 
-'#'include <string.h>
+#include <stdlib.h>
 
-\#include <fcntl.h>
+#include <string.h>
+
+#include <fcntl.h>
 
 #include <unistd.h>
 
