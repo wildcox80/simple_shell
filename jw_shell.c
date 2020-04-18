@@ -22,10 +22,10 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 		str = get_line(isatty_val);
 
 		if (_strcmp(str, "exit\n") == 0)
-
+		{
 			free(str);
-		exit(0);
-
+			exit(0);
+		}
 		if (str != NULL)
 		{
 			prompt_num++;
