@@ -26,7 +26,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 			free(str);
 		exit(0);
 
-		if (string != NULL)
+		if (str != NULL)
 		{
 			prompt_num++;
 			line = _strtok(str);
