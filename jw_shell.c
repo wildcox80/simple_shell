@@ -2,38 +2,39 @@
 /**
  * main - simple shell program that takes user input and interprets it as unix
  * commands
- * @argc: number of command line arguments
+ * @ac: number of command line arguments
  * @av: list of command line arguments
  * @env: environment
  * Return: 0 (success)
  */
 
 
-int main(int argc __attribute__((unused)), char **av, char **env)
+int main(int ac __attribute__((unused)), char **av, char **env)
 {
-	char *string = NULL, **line = NULL;
-	int _num_prompt = 0, val_isatty = 0;
+	char *str = NULL;
+	char **line = NULL;
+	int prompt_num = 0;
+	int isatty_val = 0;
 
 	while (1)
 	{
-		val_isatty = isatty(STDIN_FILENO);
-		string = get_line(val_isatty);
+		isatty_val = isatty(STDIN_FILENO);
+		str = get_line(isatty_val);
 
-		if (_strcmp(string, "exit\n") == 0)
-		{
-			free(string);
-			exit(0);
-		}
+		if (_strcmp(str, "exit\n") == 0)
+
+			free(str);
+		exit(0);
 
 		if (string != NULL)
 		{
-			_num_prompt++;
-			line = _strtok(string);
-			_execev(line, av[0], _num_prompt, val_isatty, env);
-			free(string);
+			prompt_num++;
+			line = _strtok(str);
+			_execev(line, av[0], prompt_num, isatty_val, env);
+			free(str);
 			free(line);
 		}
-		val_isatty = 0;
+		isatty_val = 0;
 	}
 	return (0);
 }
