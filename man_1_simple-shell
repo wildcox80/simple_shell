@@ -7,11 +7,13 @@ hsh \- Simple command-line interpreter UNIX.
 .B ./hsh
 .I No options available.
 
+jw_shell/user@root$ [ command ] [ option ]
+
 .SH DESCRIPTION
 .B hsh
 A Unix shell is a command-line interpreter or shell that provides a command line user interface for Unix-like operating systems.
 This shell was inspired by the first UNIX shell created by Ken Thompson.
-hsh was developed in Ubuntu 16.04 LTS, compiled with GCC 4.8.4.
+hsh was developed in Ubuntu 16.04 LTS, compiled with GCC 4.8.4. and uses PATH to find and execute the command binary files.
 
 .SH Invocation:
 Invocate the shell in interactive mode by executing the command:
@@ -29,6 +31,17 @@ Alternatively, a command can be entered and then piped into ./hsh. For example:
 .\&
 \&$ echo "hello world" | ./hsh
 
+ For exit of the simple shell:
+.br
+.\&
+.RS
+write
+.I exit
+or
+.I Ctrl_+_d
+.br
+.\&
+
 .SH BUILTINS
 The following builtin commands are supported:
 .br
@@ -45,9 +58,9 @@ No known bugs. Please report any bugs to the authors.
 
 .SH AUTHORS
 .br
-Wilder Rincon
+Wilder Rincon <1588@holbertonschool.com>
 .br
-Jhonathan Angarita
+Jhonathan Angarita <1538@holbertonschool.com>
 
 .SH SEE ALSO
 sh
