@@ -50,7 +50,16 @@ README file for project simple shell at Holberton School
 man page for simple shell project
 
 ### shell.h
-Header file for simple shell program
+/#include <stdio.h>
+"#"include <stdlib.h>
+'#'include <string.h>
+\#include <fcntl.h>
+#include <unistd.h>
+#include <dirent.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <sys/stat.h>
+#include <signal.h>
 
 ### jw_shell.c
 Program that runs simple shell included contain helper functions and built-ins
