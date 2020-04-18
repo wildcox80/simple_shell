@@ -14,7 +14,7 @@ char *get_line(int isatty)
 
 	if (isatty == 1)
 	{
-		write(STDOUT, "\033[1;31mjw_shell/user@root$ ", 32);
+		write(STDOUT, "jw_shell/user@root$ ", 32);
 		write(STDOUT, "\033[0m", 4);
 	}
 
